@@ -1,7 +1,8 @@
 import sqlite3 as sqlite
 
-db = "../users.db"
+db = "users.db"
 
+# Adds a user to the database
 def insert(first_name,last_name,email,fav_number):
     # Connect to the database
     conn = sqlite.connect(db)
@@ -15,7 +16,7 @@ def insert(first_name,last_name,email,fav_number):
     # Close database
     conn.close()
 
-
+# Looks up a user by email
 def lookup_email(email):
     # Connect to the database
     conn = sqlite.connect(db)
