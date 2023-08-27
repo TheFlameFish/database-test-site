@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import database as db
 
 app = Flask(__name__)
@@ -11,6 +11,10 @@ def fetch(email):
         return("Error: 404 not found")
     else:
         return str(data[3])
+
+@app.route('/signup')
+def signup():
+    return render_template('templates/signUp.html')
 
 if __name__ == '__main__':
     app.run(port=2424,debug=True,host="0.0.0.0")
